@@ -30,6 +30,7 @@
             <el-switch
               v-if="column.key.indexOf('Mirror') == 0"
               v-model="mirrors[column.key]"
+              :id="column.key"
               @change="mirrorChange(column.key)"
             ></el-switch>
             <span v-html="column.title"></span>

@@ -8,11 +8,14 @@ module.exports = {
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.csv$': 'jest-raw-loader'
   },
   moduleNameMapper: {
+    '\\.css$': '<rootDir>/__mocks__/styleMock.js',
     '^@/(.*)$': '<rootDir>/src/$1'
   },
+  setupTestFrameworkScriptFile: "jest-extended",
   snapshotSerializers: [
     'jest-serializer-vue'
   ],
